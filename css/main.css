@@ -1,0 +1,629 @@
+/* =====================   CSS RESET SECTION ==== */
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0b2 | 201101 */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym,
+address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead,
+tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output,
+ruby, section, summary, time, mark,
+audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+img{vertical-align: top;}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, menu, nav,
+section, canvas, main { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+html, body{  width: 100%;  height: 100%;  }
+
+/* --------------------------------------GENERAL SECTION-----------------------------------------*/
+
+body {
+    font-family: Myriad, Verdana, sans-serif;
+    background-color: black;   
+}
+
+.bgImages {
+    opacity: 0.4;
+}
+
+#bgSlider,
+.wrap,
+.tiles {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.wrap {
+    position: relative;
+}
+
+
+.tiles {
+    position: fixed;
+}
+
+.tile {
+    position: relative;
+    float: left; 
+    width: 11.1%;
+    height: 100%;
+}
+
+.last {
+    width:12.5%;
+}
+
+.photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat:repeat;
+    background-position: center;
+    background-size: cover;
+    transition: transform .5s ease-out;
+}
+
+h1, h2 {
+    font-family: Futura, Verdana, sans-serif;
+    color: white;  
+    padding: 10px;
+}
+
+h1 {
+    font-size: 3vw;
+}
+
+p {
+    text-align: justify;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.container {
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
+    pointer-events: none;
+}
+
+/*---------------------------------------HEADER SECTION----------------------------------------*/
+
+.arrow {
+    position: fixed;
+    bottom: 40px;
+    pointer-events:auto;
+    cursor: pointer;
+    right: 2%;
+    padding: 5px;    
+}
+
+.arrow img {
+    width: 20px;
+    height: 30px;
+}
+
+#arrow-left {
+    margin-right: 30px; 
+}
+
+.arrow:hover {
+    font-weight: bold;
+}
+
+.welcomeSite {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0; 
+}
+
+.welcomeSite img {
+     width: 50%;
+}
+
+.welcomeSite h1 {
+   margin-top: 20px;
+}
+
+.socialMedia {
+    position: fixed;
+    top: 70px;
+    right: 8%;
+    z-index: 5;
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.socialMedia a {
+    font-family: Futura, Verdana, sans-serif;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;   
+    letter-spacing: 1px;    
+    margin-bottom: 20px;
+}
+
+.socialMedia a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+/* --------------------------------------MAIN  SECTION--------------------------------------- */
+
+h2 {
+    font-size: 2rem;
+    text-align: left;
+}
+
+.menu-container ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+}
+
+.menu-container {
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    pointer-events: auto;
+}
+
+.menu-container a {
+    font-family: Futura, Verdana, sans-serif;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;   
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.aboutFrame {
+    position: relative;
+    top: 200px;
+    background-color: black;
+    box-sizing: border-box;
+    margin: 100px auto 300px auto;
+    padding: 10px;
+    line-height: 1.7;
+    border-radius: 5px;
+    width: 65%;
+}
+
+.aboutFrame h2, .contactPage h2 {
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+.aboutFrame p {
+    color: white;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.galleryPage {
+    position: relative;
+    left:0;
+    right: 0;
+    top: 250px;
+    background-color: black;
+    padding: 10px 0 30px 0;
+    width: 100%;
+    height: auto;
+}
+
+.containerGallery {
+    width: 55%;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 4;
+}
+
+.galleryPage h2 {
+    margin-left: 18px;
+    margin-top: 18px;
+}
+
+.galleryPage h3 {
+    color: white;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.photo-gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;   
+}
+
+.photo-gallery ul {
+    width: 100%;
+}
+
+.photo-gallery ul li .thumbnail {
+    width: 45px;
+    cursor:pointer;
+    pointer-events: auto;
+    transition-duration: .5s;
+    border: 2px darkgrey solid ;
+    margin-bottom: 3px;  
+}
+
+.photo-gallery ul li .thumbnail:hover{
+    transform: scale(1.1);
+}
+
+.photo-gallery ul li img { 
+    width: 100%;
+}
+
+.photo-list {
+    margin-left: 10px;
+}
+
+.photo-gallery .current-photo {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.photo-gallery .current-photo img {
+    width: 100%;
+    border: 2px darkgrey solid ;
+}
+
+.contactFrame {
+    position: relative;
+    top: 0;
+    background-color: black;
+    box-sizing: border-box;
+    padding: 10px;
+    line-height: 1.7;
+    border-radius: 5px;
+    width: 65%;
+    margin: 430px auto 120px auto;
+    pointer-events: none;    
+}
+
+form {
+    margin:0 auto;
+    width:100%;
+}
+
+label {
+    color: white;
+    display: block;
+    padding: 5px;
+    text-align: left;
+}
+
+#submit {
+    display: block;
+    padding: 5px;
+    width:127px;
+    height:38px;
+    border:none;
+    margin-top:20px;
+    cursor:pointer;
+    pointer-events: auto;
+    margin-bottom: 20px;   
+}
+
+#submit:hover {
+    opacity:.9;
+}
+
+input, textarea {
+	width:90%;
+	height:30px;
+	background:#efefef;
+	border:1px solid #dedede;
+	padding:10px;
+	margin-top:3px;
+	font-size:0.9em;
+	color:#3a3a3a;
+    border-radius:5px;
+    pointer-events: auto;
+}
+
+.userMsg {
+    height: 150px;
+}
+
+input:focus, textarea:focus {
+    border:1px solid #97d6eb;
+}
+
+
+
+/* --------------------------------------FOOTER  SECTION------------------------------------ */
+
+
+footer {
+    background-color: white;
+    width: 100%;
+    z-index: 15;
+    height: auto;
+    position: relative;
+    bottom: 0;
+}
+
+footer p {
+    width: 320px;
+    font-family: Futura;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* ----------------------------------SCREENS < 359px SECTION------------------------------- */
+
+@media only screen and (max-width: 360px) {
+.arrow  {
+    display: none;
+}
+
+}
+
+/*==========================================  < 359px ======================================*/
+
+/* ----------------------------------SCREENS < 768px SECTION------------------------------- */
+
+@media only screen and (max-width: 767px){
+    
+.menuIcon{
+    display: block;
+    text-align: left;
+    position: fixed;
+    top:18px;
+    z-index: 13;
+    pointer-events: auto;
+    cursor: pointer;    
+}
+
+.frameSmallDevices {
+    background-color: #000;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 10;
+    top: 0;
+    border-bottom: solid white 1px;
+}
+    
+.mainMenu .menu-container {
+    display: none;
+}
+   
+.welcomeSite {
+    position: fixed;
+    top: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 11;
+    width: 200px;
+}
+ 
+.welcomeSite h1 {
+    font-size: 2vw;
+    margin-top: -5px;
+}
+    
+.frameSmallDevices2 {
+    background-color: black;
+    width: 100%;
+    height: 30px;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 10;
+    bottom: 28px;
+    border-top: solid white 1px;
+}
+    
+.socialMedia {
+    width: 100%;
+    top: 695px;
+    flex-direction: row;
+    z-index: 11;
+    right: auto;
+    text-align: center;
+}
+
+.socialMedia a {
+    margin: 0 10px 0 10px;
+    font-size: 12px;
+}
+
+.aboutFrame {
+    margin-top: -800px;
+    width: 100%;
+}
+
+.aboutFrame p {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}
+    
+.galleryPage h3 {
+    line-height: 1.5;
+}
+
+.contactFrame {
+    width: 100%;
+}
+    
+.photo-gallery ul li .thumbnail {
+    width: 40px;
+}
+    
+.arrow {
+    z-index: 11;
+    bottom: 31px;
+    right: 50px;
+    width: 5px;
+}
+    
+.arrow img {
+    width: 10px;
+    height: 15px;
+}
+    
+#arrow-left {
+    margin-right: 15px;  
+}
+    
+.galleryPage {
+    top:80px;
+}
+    
+.containerGallery {
+    width: 80%;
+}
+    
+.contactFrame {
+    top:-150px;
+}
+    
+.menu-container ul {
+    margin-top: 80px;
+    justify-content: space-between;
+} 
+    
+.menu-container {
+    z-index: 12;
+    background-color: black;
+}
+    
+.menu-container a {
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+
+.menu-container ul:first-child {
+    border-top: 1px solid #fff;
+}
+    
+.menu-container .menu-item:first-child a{
+    display: none;
+}
+
+.menu-lt, .menu-rt, .menu-lb, .menu-rb  {
+	display: none;
+}
+
+footer {
+    position: fixed;
+    height: auto;
+}
+
+footer p{
+    font-size: 12px;
+    
+}
+
+}
+
+/*=====================================  < 768px ======================================*/
+
+
+/* -------------------------------SCREENS > 767px SECTION-------------------------------- */
+
+@media only screen and (min-width: 768px){
+    
+.frammeSmallDevices, .frammeSmallDevices2 {
+    display: none;
+}
+    
+.menu-item {
+	width: auto;
+	float: left;
+	padding: 10px 0;
+	position: relative;
+    display: block; 
+}
+   
+.menuIcon {
+    display: none;
+}
+    
+.menu-lt {
+	width: 5px;
+	height: 5px;
+	left: 0;
+	top: 0;
+	margin-left: -10px;
+	margin-top: -10px;
+	border-left: solid 1px white;
+	border-top: solid 1px white;
+	opacity: 0;
+	position: absolute;
+}
+
+.menu-rt {
+	width: 5px;
+	height: 5px;
+	right: 0;
+	top: 0;
+	margin-right: -10px;
+	margin-top: -10px;
+	border-top: solid 1px white;
+	border-right: solid 1px white;
+	opacity: 0;
+	position: absolute;
+}
+
+.menu-lb {
+	width: 5px;
+	height: 5px;
+	left: 0;
+	top: 100%;
+	margin-left: -10px;
+	margin-top: 5px;
+	border-left: solid 1px white;
+	border-bottom: solid 1px white;
+	opacity: 0;
+	position: absolute;
+}
+
+.menu-rb {
+	width: 5px;
+	height: 5px;
+	right: 0;
+	top: 100%;
+	margin-right: -10px;
+	margin-top: 5px;
+	border-bottom: solid 1px white;
+	border-right: solid 1px white;
+	opacity: 0;
+	position: absolute;
+}
+
+}
+
+/*======================================  > 767px =======================================*/
