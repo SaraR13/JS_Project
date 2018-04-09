@@ -27,38 +27,40 @@
         <div class="wrap">
             <div id="bgSlider">            
                 <div class="tiles">
-                    <div class="tile" data-scale="1.1" data-image="images/first_tile_first_image.png"></div>
-                    <div class="tile" data-scale="1.1" data-image="images/first_tile_second_image.png"></div>
-                    <div class="tile" data-scale="1.1" data-image="images/first_tile_first_image.png"></div>
-                    <div class="tile" data-scale="1.1" data-image="images/first_tile_second_image.png"></div>
-                    <div class="tile" data-scale="1.1" data-image="images/first_tile_first_image.png"></div>
-                    <div class="tile" data-scale="1.1" data-image="images/first_tile_second_image.png"></div>
-                    <div class="tile" data-scale="1.1" data-image="images/first_tile_first_image.png"></div>
-                    <div class="tile" data-scale="1.1" data-image="images/first_tile_second_image.png"></div>
-                    <div class="tile" data-scale="1.1" data-image="images/first_tile_first_image.png"></div>
+                    <img class="tile" src="images/first_tile_first_image.png" alt="background tile"/>
+                    <img class="tile" src="images/first_tile_second_image.png" alt="background tile"/>
+                    <img class="tile" src="images/first_tile_first_image.png" alt="background tile"/>
+                    <img class="tile" src="images/first_tile_second_image.png" alt="background tile"/>
+                    <img class="tile" src="images/first_tile_first_image.png" alt="background tile"/>
+                    <img class="tile" src="images/first_tile_second_image.png" alt="background tile"/>
+                    <img class="tile" src="images/first_tile_first_image.png" alt="background tile"/>
+                    <img class="tile" src="images/first_tile_second_image.png" alt="background tile"/>
+                    <img class="tile" src="images/first_tile_first_image.png" alt="background tile"/>
                 </div><!--/tiles-->
   
                 <div class="tiles">
-                    <div class="tile" data-scale="1.1" data-image="images/second_tile_first_image.png"></div>
-                    <div class="tile" data-scale="1.1" data-image="images/second_tile_second_image.png"></div>
-                    <div class="tile" data-scale="1.1" data-image="images/second_tile_first_image.png"></div>
-                    <div class="tile" data-scale="1.1" data-image="images/second_tile_second_image.png"></div>
-                    <div class="tile" data-scale="1.1" data-image="images/second_tile_first_image.png"></div>
-                    <div class="tile" data-scale="1.1" data-image="images/second_tile_second_image.png"></div>
-                    <div class="tile" data-scale="1.1" data-image="images/second_tile_first_image.png"></div>
-                    <div class="tile" data-scale="1.1" data-image="images/second_tile_second_image.png"></div>
-                    <div class="tile" data-scale="1.1" data-image="images/second_tile_first_image.png"></div>
+                    <img class="tile" src="images/second_tile_first_image.png" alt="background tile"/>
+                    <img class="tile" src="images/second_tile_second_image.png" alt="background tile"/>
+                    <img class="tile" src="images/second_tile_first_image.png" alt="background tile"/>
+                    <img class="tile" src="images/second_tile_second_image.png" alt="background tile"/>
+                    <img class="tile" src="images/second_tile_first_image.png" alt="background tile"/>
+                    <img class="tile" src="images/second_tile_second_image.png" alt="background tile"/>
+                    <img class="tile" src="images/second_tile_first_image.png" alt="background tile"/>
+                    <img class="tile" src="images/second_tile_second_image.png" alt="background tile"/>
+                    <img class="tile" src="images/second_tile_first_image.png" alt="background tile"/>
                 </div><!--/tiles-->
   
                 <div class="tiles">
-                    <div class="tile last" data-scale="1.1" data-image="images/third_tile_first_image.png"></div>
-                    <div class="tile last" data-scale="1.1" data-image="images/third_tile_second_image.png"></div>
-                    <div class="tile last" data-scale="1.1" data-image="images/third_tile_third_image.png"></div>
-                    <div class="tile last" data-scale="1.1" data-image="images/third_tile_fourth_image.png"></div>
-                    <div class="tile last" data-scale="1.1" data-image="images/third_tile_fifth_image.png"></div>
-                    <div class="tile last" data-scale="1.1" data-image="images/third_tile_sixth_image.png"></div>
-                    <div class="tile last" data-scale="1.1" data-image="images/third_tile_seventh_image.png"></div>
-                    <div class="tile last" data-scale="1.1" data-image="images/third_tile_eighth_image.png"></div>
+                    <img class="tile last" src="images/third_tile_first_image.png" alt="background tile"/>
+                    <img class="tile last" src="images/third_tile_second_image.png" alt="background tile"/>
+                    <img class="tile last" src="images/third_tile_third_image.png" alt="background tile"/>
+                    <img class="tile last" src="images/third_tile_fourth_image.png" alt="background tile"/>
+                    <img class="tile last" src="images/third_tile_fifth_image.png" alt="background tile"/>
+                    <img class="tile last" src="images/third_tile_sixth_image.png" alt="background tile"/>
+                    <img class="tile last" src="images/third_tile_seventh_image.png" alt="background tile"/>
+                    <img class="tile last" src="images/third_tile_eighth_image.png" alt="background tile"/>
+                    <img class="tile last" src="images/third_tile_first_image.png" alt="background tile"/>
+                    <img class="tile last" src="images/third_tile_second_image.png" alt="background tile"/>
                 </div><!--/tiles-->
             </div><!--/bgSlider-->
         </div><!--/wrap-->

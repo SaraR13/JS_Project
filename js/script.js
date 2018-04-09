@@ -1,11 +1,19 @@
-/*BACKGROUND SLIDE*/
-
 (function(){
-
-let sliderImages = document.querySelectorAll(".tiles"),
-  arrowLeft = document.querySelector("#arrow-left"),
-  arrowRight = document.querySelector("#arrow-right"),
-  current = 0;
+    
+function init() {
+    bindEnquire();
+    bindMenuBtn();
+    scrollDown();
+}
+    
+    
+/*BACKGROUND SLIDE*/
+   
+const sliderImages = document.querySelectorAll(".tiles"),
+      arrowLeft = document.querySelector("#arrow-left"),
+      arrowRight = document.querySelector("#arrow-right");
+  
+let   current = 0;
 
 function reset() {
   for (let i = 0; i < sliderImages.length; i++) {
@@ -47,14 +55,10 @@ arrowRight.addEventListener("click", function() {
 startSlide();
 
 
-
-
-
-
-
-
-
-
+    
+    
+    
+    
 
 /*GALLERY*/
     
@@ -81,42 +85,42 @@ $(function() {
 
 $(document).ready(documentReady);
 
-function documentReady()
-{
-    var button = $(".menu-container .menu-item li");
+function documentReady() {
 
-    button.mouseover(onButtonOver);
-    function onButtonOver()
-    {
+const button = $(".menu-container .menu-item li");
 
-    var parent = $(this).parent();
-        parent.addClass("active");
+button.mouseover(onButtonOver);
+    function onButtonOver() {
 
-        parent.find(".menu-lt").animate({marginLeft: 0, marginTop: 0, opacity: 1}, 100);
-
-        parent.find(".menu-rt").animate({marginRight: 0, marginTop: 0, opacity: 1}, 100);
-
-        parent.find(".menu-lb").animate({marginLeft: 0, marginTop: -5, opacity: 1}, 100);
-
-        parent.find(".menu-rb").animate({marginRight: 0, marginTop: -5, opacity: 1}, 100);
-
+    const parent = $(this).parent();
+        
+    parent.addClass("active");
+    parent
+        .find(".menu-lt").animate({marginLeft: 0, marginTop: 0, opacity: 1}, 100)
+        .end()
+        .find(".menu-rt").animate({marginRight: 0, marginTop: 0, opacity: 1}, 100)
+        .end()
+        .find(".menu-lb").animate({marginLeft: 0, marginTop: -5, opacity: 1}, 100)
+        .end()
+        .find(".menu-rb").animate({marginRight: 0, marginTop: -5, opacity: 1}, 100)   
+        .end()
     }
 
-    button.mouseout(onButtonOut);
-    function onButtonOut()
-    {
+button.mouseout(onButtonOut);
+    function onButtonOut() {
 
-    var parent = $(this).parent();
-        parent.removeClass("active");        
-
-        parent.find(".menu-lt").animate({marginLeft: -10, marginTop: -10, opacity: 0}, 100);
-
-        parent.find(".menu-rt").animate({marginRight: -10, marginTop: -10, opacity: 0}, 100);
-
-        parent.find(".menu-lb").animate({marginLeft: -10, marginTop: 5, opacity: 0}, 100);
+    const parent = $(this).parent();
         
-        parent.find(".menu-rb").animate({marginRight: -10, marginTop: 5, opacity: 0}, 100);
-
+    parent.removeClass("active");        
+    parent
+        .find(".menu-lt").animate({marginLeft: -10, marginTop: -10, opacity: 0}, 100)
+        .end()
+        .find(".menu-rt").animate({marginRight: -10, marginTop: -10, opacity: 0}, 100)
+        .end()
+        .find(".menu-lb").animate({marginLeft: -10, marginTop: 5, opacity: 0}, 100)
+        .end()
+        .find(".menu-rb").animate({marginRight: -10, marginTop: 5, opacity: 0}, 100)
+        .end()
     }
 }
 
@@ -128,7 +132,7 @@ function documentReady()
 
 
 /*BACKGROUND ZOOM ANIMATION*/
-    
+/*    
 $('.tile')
     
     .on('mouseover', function(){
@@ -146,73 +150,62 @@ $('.tile')
         .children('.photo').css({'background-image': 'url('+ $(this).attr('data-image') +')'});
     })
 
+*/
+    
+    
+/*SCROLL DOWN ANIMATION*/
+    
+    
+const $menuLinks = $(".menuLinks");
 
-
-    const $menuLinks = $(".menuLinks");
-
-    function init(){
-        
+function scrollDown(){        
         $menuLinks.on("click", function(evt){
-            
-            evt.preventDefault();
-
-            let targetElement = $(this).attr("href");
-            
+        evt.preventDefault();
+        let targetElement = $(this).attr("href");
             $("html, body")
                 .animate(
                     {
                         "scrollTop" : $(targetElement).offset().top 
                     },
                     1300
-
                 );
-
-
         });
     }
 
-    window.addEventListener("load", init);
-})();
-
-
-
-
-
-
-
-
-/*SCROLL DOWN ANIMATION*/
-
-(function () {
-    const
-        $menuBtn            =   $("#menuBtn"),
-        $topNavContainer    =   $(".mainMenu .menu-container")
-    ;
-
-    function bindMenuBtn() {
-        $menuBtn.on("click", function () {
-           $topNavContainer.slideToggle();
-        });
-    }
     
-    function bindEnquire() {
-        enquire.register("screen and (min-width: 768px)", {
+window.addEventListener("load", init);
 
-          
-            match: function () {
-                $topNavContainer.show();
-            },
 
-            unmatch: function () {
-                $topNavContainer.hide();
-            }
-        });
-    } 
 
-    function init() {
-        bindEnquire();
-        bindMenuBtn();
-    } 
 
-    window.addEventListener("load", init);
+
+/* MENU ICON ON SMALL DEVICES */
+
+const
+    $menuBtn            =   $("#menuBtn"),
+    $topNavContainer    =   $(".mainMenu .menu-container");
+
+function bindMenuBtn() {
+    $menuBtn.on("click", function () {
+    $topNavContainer.slideToggle();
+    });
+}
+    
+function bindEnquire() {
+    enquire.register("screen and (min-width: 768px)", {
+    match: function () {
+    $topNavContainer.show();
+},
+
+    unmatch: function () {
+    $topNavContainer.hide();
+    }
+    });
+} 
+
+
+
+window.addEventListener("load", init);
+
+
 })();
