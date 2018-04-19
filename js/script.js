@@ -1,40 +1,37 @@
 (function(){
-    
-function init() {
-    bindEnquire();
-    bindMenuBtn();
-    scrollDown();
-}
-    
-    
-/*BACKGROUND SLIDE*/
+
+   
+//BACKGROUND SLIDE
    
 const sliderImages = document.querySelectorAll(".tiles"),
       arrowLeft = document.querySelector("#arrow-left"),
       arrowRight = document.querySelector("#arrow-right");
-  
-let   current = 0;
+    
+let     current = 0;
 
 function reset() {
   for (let i = 0; i < sliderImages.length; i++) {
-    sliderImages[i].style.display = "none";
+    sliderImages[i].classList.add('newClass2');
   }
 }
 
 function startSlide() {
   reset();
-  sliderImages[0].style.display = "block";
+  sliderImages[0].classList.remove('newClass2');
+  sliderImages[0].classList.add('newClass');
 }
 
 function slideLeft() {
   reset();
-  sliderImages[current - 1].style.display = "block";
+  sliderImages[current - 1].classList.remove('newClass2');
+  sliderImages[current - 1].classList.add('newClass');
   current--;
 }
 
 function slideRight() {
   reset();
-  sliderImages[current + 1].style.display = "block";
+  sliderImages[current + 1].classList.remove('newClass2');
+  sliderImages[current + 1].classList.add('newClass');
   current++;
 }
 
@@ -43,6 +40,7 @@ arrowLeft.addEventListener("click", function() {
     current = sliderImages.length;
   }
   slideLeft();
+    
 });
 
 arrowRight.addEventListener("click", function() {
@@ -50,77 +48,148 @@ arrowRight.addEventListener("click", function() {
     current = -1;
   }
   slideRight();
-});
-
-startSlide();
-
-
     
-    
-    
-    
-
-/*GALLERY*/
-    
-$(function() {
-
-	$('.photo-gallery ul li').click(function() {
-		var src = $(this).data('src');
-		var $gallery = $(this).closest('.photo-gallery');
-		$gallery.find('.current-photo img').attr('src', src);
-	});
-
-	$('.photo-gallery').each(function() {
-		$(this).find('li')[0].click();
-	});
-
 });
 
 
 
-
     
     
-/*MENU BORDER ANIMATION*/
+    
+    
 
-$(document).ready(documentReady);
+//GALLERY
 
-function documentReady() {
+function startGallery() {
+
+$('.photo-gallery ul li').on("click", function() {
+	
+    let src = $(this).data('src');
+    let $gallery = $(this).closest('.photo-gallery');
+	
+    $gallery.find('.current-photo img').attr('src', src);
+    
+});
+
+$('.photo-gallery').each(function() {
+
+    $(this).find('li')[0].click();
+    
+});
+
+};
+
+
+
+
+    
+ 
+    
+    
+//MENU BORDER ANIMATION
+
+function menuBorderAnim() {
 
 const button = $(".menu-container .menu-item li");
 
 button.mouseover(onButtonOver);
+   
     function onButtonOver() {
 
-    const parent = $(this).parent();
+    let parent = $(this).parent();
         
     parent.addClass("active");
     parent
-        .find(".menu-lt").animate({marginLeft: 0, marginTop: 0, opacity: 1}, 100)
+        .find(".menu-lt").animate(
+            {   
+                marginLeft: 0, 
+                marginTop: 0, 
+                opacity: 1
+            }, 
+            100
+    )
         .end()
-        .find(".menu-rt").animate({marginRight: 0, marginTop: 0, opacity: 1}, 100)
+        
+        .find(".menu-rt").animate(
+            {
+                marginRight: 0,
+                marginTop: 0,
+                opacity: 1
+            }, 
+            100
+    )
         .end()
-        .find(".menu-lb").animate({marginLeft: 0, marginTop: -5, opacity: 1}, 100)
+        
+        .find(".menu-lb").animate(
+            {
+                marginLeft: 0,
+                marginTop: -5,
+                opacity: 1
+            }, 
+            100
+    )
         .end()
-        .find(".menu-rb").animate({marginRight: 0, marginTop: -5, opacity: 1}, 100)   
+        
+        .find(".menu-rb").animate(
+            {
+                marginRight: 0,
+                marginTop: -5,
+                opacity: 1
+            }, 
+            100
+    )   
         .end()
+        
     }
 
 button.mouseout(onButtonOut);
+   
     function onButtonOut() {
 
-    const parent = $(this).parent();
+    let parent = $(this).parent();
         
     parent.removeClass("active");        
     parent
-        .find(".menu-lt").animate({marginLeft: -10, marginTop: -10, opacity: 0}, 100)
+        .find(".menu-lt").animate(
+            {
+                marginLeft: -10,
+                marginTop: -10,
+                opacity: 0
+            }, 
+            100
+    )
         .end()
-        .find(".menu-rt").animate({marginRight: -10, marginTop: -10, opacity: 0}, 100)
+        
+        .find(".menu-rt").animate(
+            {
+                marginRight: -10,
+                marginTop: -10,
+                opacity: 0
+            }, 
+            100
+    )
         .end()
-        .find(".menu-lb").animate({marginLeft: -10, marginTop: 5, opacity: 0}, 100)
+        
+        .find(".menu-lb").animate(
+            {
+                marginLeft: -10,
+                marginTop: 5,
+                opacity: 0
+            }, 
+            100
+    )
         .end()
-        .find(".menu-rb").animate({marginRight: -10, marginTop: 5, opacity: 0}, 100)
+        
+        .find(".menu-rb").animate(
+            {
+                marginRight: -10,
+                marginTop: 5,
+                opacity: 0
+            }, 
+            100
+    )
         .end()
+        
     }
 }
 
@@ -128,33 +197,9 @@ button.mouseout(onButtonOut);
 
 
 
-
-
-
-/*BACKGROUND ZOOM ANIMATION*/
-/*    
-$('.tile')
-    
-    .on('mouseover', function(){
-      $(this).children('.photo').css({'transform': 'scale('+ $(this).attr('data-scale') +')'});
-    })
-    .on('mouseout', function(){
-      $(this).children('.photo').css({'transform': 'scale(1)'});
-    })
     
     
-    .each(function(){
-      $(this)
-        
-        .append('<div class="photo"></div>')
-        .children('.photo').css({'background-image': 'url('+ $(this).attr('data-image') +')'});
-    })
-
-*/
-    
-    
-/*SCROLL DOWN ANIMATION*/
-    
+//SCROLL DOWN ANIMATION
     
 const $menuLinks = $(".menuLinks");
 
@@ -173,13 +218,11 @@ function scrollDown(){
     }
 
     
-window.addEventListener("load", init);
 
 
 
 
-
-/* MENU ICON ON SMALL DEVICES */
+// MENU ICON ON SMALL DEVICES
 
 const
     $menuBtn            =   $("#menuBtn"),
@@ -204,8 +247,19 @@ function bindEnquire() {
 } 
 
 
+    
+function init() {
+   
+ startSlide();
+    bindEnquire();
+    bindMenuBtn();
+    scrollDown();
+    startGallery();
+    menuBorderAnim();
+}    
+    
+window.onload = init;     
 
-window.addEventListener("load", init);
+})(); // closing IFFY
 
 
-})();
