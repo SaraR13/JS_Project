@@ -127,7 +127,7 @@
    
     </div><!--/container-->
     
-    <div class="frameSmallDevices2"></div>
+    <div class="frameSmallDevicesBottom"></div>
     
 </header>
 

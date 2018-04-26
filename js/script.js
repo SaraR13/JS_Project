@@ -1,37 +1,44 @@
 (function(){
+    
+const   sliderImages        = document.querySelectorAll(".tiles"),
+        arrowLeft           = document.querySelector("#arrow-left"),
+        arrowRight          = document.querySelector("#arrow-right"),
+        button              = $(".menu-container .menu-item li"),
+        $menuLinks          = $(".menuLinks"),
+        $menuBtn            = $("#menuBtn"),
+        $topNavContainer    = $(".mainMenu .menu-container");
+    
+let     current = 0;    
 
+    
+    
+    
    
 //BACKGROUND SLIDE
-   
-const sliderImages = document.querySelectorAll(".tiles"),
-      arrowLeft = document.querySelector("#arrow-left"),
-      arrowRight = document.querySelector("#arrow-right");
     
-let     current = 0;
-
 function reset() {
   for (let i = 0; i < sliderImages.length; i++) {
-    sliderImages[i].classList.add('newClass2');
+    sliderImages[i].classList.add('removeStyleBackground');
   }
 }
 
 function startSlide() {
   reset();
-  sliderImages[0].classList.remove('newClass2');
-  sliderImages[0].classList.add('newClass');
+  sliderImages[0].classList.remove('removeStyleBackground');
+  sliderImages[0].classList.add('addStyleBackground');
 }
 
 function slideLeft() {
   reset();
-  sliderImages[current - 1].classList.remove('newClass2');
-  sliderImages[current - 1].classList.add('newClass');
+  sliderImages[current - 1].classList.remove('removeStyleBackground');
+  sliderImages[current - 1].classList.add('addStyleBackground');
   current--;
 }
 
 function slideRight() {
   reset();
-  sliderImages[current + 1].classList.remove('newClass2');
-  sliderImages[current + 1].classList.add('newClass');
+  sliderImages[current + 1].classList.remove('removeStyleBackground');
+  sliderImages[current + 1].classList.add('addStyleBackground');
   current++;
 }
 
@@ -89,8 +96,6 @@ $('.photo-gallery').each(function() {
 //MENU BORDER ANIMATION
 
 function menuBorderAnim() {
-
-const button = $(".menu-container .menu-item li");
 
 button.mouseover(onButtonOver);
    
@@ -201,8 +206,6 @@ button.mouseout(onButtonOut);
     
 //SCROLL DOWN ANIMATION
     
-const $menuLinks = $(".menuLinks");
-
 function scrollDown(){        
         $menuLinks.on("click", function(evt){
         evt.preventDefault();
@@ -223,10 +226,6 @@ function scrollDown(){
 
 
 // MENU ICON ON SMALL DEVICES
-
-const
-    $menuBtn            =   $("#menuBtn"),
-    $topNavContainer    =   $(".mainMenu .menu-container");
 
 function bindMenuBtn() {
     $menuBtn.on("click", function () {
