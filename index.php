@@ -120,7 +120,7 @@
         </div><!--/welcomeSite--> 
 
         <div class="socialMedia">
-            <a href="https://www.instagram.com/yor_your_own_reality/" class="logoInstagram" id="insta">Instagram</a>
+            <a href="https://www.instagram.com/yor_own_reality/" class="logoInstagram" id="insta">Instagram</a>
             <a href="https://www.facebook.com/YOReality2017/" class="logoFacebook" id="facebook">Facebook</a>
             <a href="https://society6.com/yorownreality" class="logoSociety6" id="society6">Society6</a>
         </div><!--/socialMedia-->

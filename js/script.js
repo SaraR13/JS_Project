@@ -3,7 +3,7 @@
 const   sliderImages        = document.querySelectorAll(".tiles"),
         arrowLeft           = document.querySelector("#arrow-left"),
         arrowRight          = document.querySelector("#arrow-right"),
-        button              = $(".menu-container .menu-item li"),
+        buttonMenuAnim      = $(".menu-container .menu-item li"),
         $menuLinks          = $(".menuLinks"),
         $menuBtn            = $("#menuBtn"),
         $topNavContainer    = $(".mainMenu .menu-container");
@@ -97,7 +97,7 @@ $('.photo-gallery').each(function() {
 
 function menuBorderAnim() {
 
-button.mouseover(onButtonOver);
+buttonMenuAnim.mouseover(onButtonOver);
    
     function onButtonOver() {
 
@@ -147,7 +147,7 @@ button.mouseover(onButtonOver);
         
     }
 
-button.mouseout(onButtonOut);
+buttonMenuAnim.mouseout(onButtonOut);
    
     function onButtonOut() {
 
@@ -248,8 +248,7 @@ function bindEnquire() {
 
     
 function init() {
-   
- startSlide();
+    startSlide();
     bindEnquire();
     bindMenuBtn();
     scrollDown();
