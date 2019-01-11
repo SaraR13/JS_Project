@@ -1,4 +1,7 @@
+
 (function(){
+    
+
     
 const   sliderImages        = document.querySelectorAll(".tiles"),
         arrowLeft           = document.querySelector("#arrow-left"),
@@ -6,14 +9,29 @@ const   sliderImages        = document.querySelectorAll(".tiles"),
         buttonMenuAnim      = $(".menu-container .menu-item li"),
         $menuLinks          = $(".menuLinks"),
         $menuBtn            = $("#menuBtn"),
+        $closeBtnId         = $(".closeBtnId"),
+        $myMenuId           = $("#myMenuId"),
+        $menuSmall          = $(".menu-container"),
+        $element            = document.querySelector("#myMenuId"),
         $topNavContainer    = $(".mainMenu .menu-container");
     
-let     current = 0;    
+let     current = 0; 
+    
+    
+//GALLERY SLICK    
+    
+function StartGallery (){
+  $('.photo-gallery').slick({ 
+    dots: true,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear',
+    centerMode: true
+  });
+}
 
-    
-    
-    
-   
+  
 //BACKGROUND SLIDE
     
 function reset() {
@@ -58,154 +76,94 @@ arrowRight.addEventListener("click", function() {
     
 });
 
-
-
-    
-    
-    
-    
-
-//GALLERY
-
-function startGallery() {
-
-$('.photo-gallery ul li').on("click", function() {
-	
-    let src = $(this).data('src');
-    let $gallery = $(this).closest('.photo-gallery');
-	
-    $gallery.find('.current-photo img').attr('src', src);
-    
-});
-
-$('.photo-gallery').each(function() {
-
-    $(this).find('li')[0].click();
-    
-});
-
-};
-
-
-
-
-    
- 
-    
+   
     
 //MENU BORDER ANIMATION
 
 function menuBorderAnim() {
 
 buttonMenuAnim.mouseover(onButtonOver);
-   
-    function onButtonOver() {
-
-    let parent = $(this).parent();
-        
-    parent.addClass("active");
-    parent
-        .find(".menu-lt").animate(
-            {   
+   function onButtonOver() {
+       let parent = $(this).parent();
+       parent.addClass("active");
+       parent.find(".menu-lt").animate({   
                 marginLeft: 0, 
                 marginTop: 0, 
                 opacity: 1
             }, 
             100
     )
-        .end()
-        
-        .find(".menu-rt").animate(
-            {
+           .end()
+           .find(".menu-rt").animate({
                 marginRight: 0,
                 marginTop: 0,
                 opacity: 1
             }, 
             100
     )
-        .end()
-        
-        .find(".menu-lb").animate(
-            {
+           .end()
+           .find(".menu-lb").animate({
                 marginLeft: 0,
                 marginTop: -5,
                 opacity: 1
             }, 
             100
     )
-        .end()
-        
-        .find(".menu-rb").animate(
-            {
+           .end()
+           .find(".menu-rb").animate({
                 marginRight: 0,
                 marginTop: -5,
                 opacity: 1
             }, 
             100
-    )   
-        .end()
+    )
+           .end()
         
     }
-
-buttonMenuAnim.mouseout(onButtonOut);
+    buttonMenuAnim.mouseout(onButtonOut);
    
     function onButtonOut() {
-
-    let parent = $(this).parent();
-        
-    parent.removeClass("active");        
-    parent
-        .find(".menu-lt").animate(
-            {
+        let parent = $(this).parent();
+        parent.removeClass("active");        
+        parent.find(".menu-lt").animate({
                 marginLeft: -10,
                 marginTop: -10,
                 opacity: 0
             }, 
             100
     )
-        .end()
-        
-        .find(".menu-rt").animate(
-            {
+            .end()
+            .find(".menu-rt").animate({
                 marginRight: -10,
                 marginTop: -10,
                 opacity: 0
             }, 
             100
     )
-        .end()
-        
-        .find(".menu-lb").animate(
-            {
+            .end()
+            .find(".menu-lb").animate({
                 marginLeft: -10,
                 marginTop: 5,
                 opacity: 0
             }, 
             100
     )
-        .end()
-        
-        .find(".menu-rb").animate(
-            {
+            .end()
+            .find(".menu-rb").animate({
                 marginRight: -10,
                 marginTop: 5,
                 opacity: 0
             }, 
             100
     )
-        .end()
+            .end()
         
     }
 }
 
-
-
-
-
-    
-    
+   
 //SCROLL DOWN ANIMATION
-    
+  
 function scrollDown(){        
         $menuLinks.on("click", function(evt){
         evt.preventDefault();
@@ -213,28 +171,26 @@ function scrollDown(){
             $("html, body")
                 .animate(
                     {
-                        "scrollTop" : $(targetElement).offset().top 
+                        "scrollTop" : $(targetElement).offset().top
+                
                     },
                     1300
                 );
         });
     }
-
     
+function menuSlider () {
+        $(".test, .menu-container .menu-item li a" ).on("click", function () {
+            if ($element.classList.contains("active")){
+                $element.classList.remove("active");
+            } else {
+                $element.classList.add("active");
+            }
+            }) }
 
-
-
-
-// MENU ICON ON SMALL DEVICES
-
-function bindMenuBtn() {
-    $menuBtn.on("click", function () {
-    $topNavContainer.slideToggle();
-    });
-}
     
 function bindEnquire() {
-    enquire.register("screen and (min-width: 768px)", {
+    enquire.register("screen and (min-width: 850px)", {
     match: function () {
     $topNavContainer.show();
 },
@@ -245,14 +201,13 @@ function bindEnquire() {
     });
 } 
 
-
     
 function init() {
     startSlide();
+    menuSlider();
     bindEnquire();
-    bindMenuBtn();
     scrollDown();
-    startGallery();
+    StartGallery();
     menuBorderAnim();
 }    
     
